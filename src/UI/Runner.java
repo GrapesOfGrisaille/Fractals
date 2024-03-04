@@ -1,4 +1,8 @@
+package UI;
 import javax.swing.JFrame;
+
+import Fractals.FractalType;
+
 import java.awt.BorderLayout;
 
 public class Runner extends JFrame{
