@@ -31,8 +31,16 @@ public class Runner extends JFrame{
     public void changeState(FractalType type){
         currentState = type;
         fPan.setFractal(type);
+    }
+    
+    public void passAndRender(){
+        fPan.renderImage();
         revalidate();
         repaint();
+    }
+
+    public void setZoom(){
+        fPan.enableZoom(0.1);
     }
     
     public static void main(String[] args){

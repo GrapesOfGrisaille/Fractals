@@ -38,6 +38,9 @@ public class ControlPanel extends JPanel implements ActionListener{
         zoomButton = new JButton("Zoom Mode");
         renderButton = new JButton("Render");
 
+        zoomButton.addActionListener(this);
+        renderButton.addActionListener(this);
+
         variablePanel.add(new JLabel("Exponent"));
         variablePanel.add(exponentField);
         variablePanel.add(zoomButton);
@@ -56,6 +59,12 @@ public class ControlPanel extends JPanel implements ActionListener{
         }
         else if(e.getSource() == mandelbarButton){
             Runner.getInstance().changeState(FractalType.MANDELBAR);
+        }
+        else if(e.getSource() == renderButton){
+            Runner.getInstance().passAndRender();
+        }
+        else if(e.getSource() == zoomButton){
+            Runner.getInstance().setZoom();
         }
     }
 }

@@ -2,12 +2,12 @@ package Fractals;
 
 public class Mandelbrot extends Fractal{
 
-    private static final int ITERATIONS = 100;
+    private static final int ITERATIONS = 250;
 
     private boolean multicorn; // Is it a multicorn?
 
-    public Mandelbrot(double xOrigin, double xEnd, double yOrigin, double yEnd, int panelWidth, int panelHeight, int exponent, boolean multicorn){
-        super(xOrigin, xEnd, yOrigin, yEnd, panelWidth, panelHeight, exponent);
+    public Mandelbrot(double xOrigin, double xEnd, double yOrigin, double yEnd, int exponent, boolean multicorn){
+        super(xOrigin, xEnd, yOrigin, yEnd, exponent);
         this.multicorn = multicorn;
     }
     // Return type is intensity of pixel at current point, based on # iterations
@@ -28,6 +28,8 @@ public class Mandelbrot extends Fractal{
         return 0;
     }
     
+    
+
     public void render(){
         // Designed to reduce floating point error accumulation at higher res
         double stepSizeX = (xEnd - xOrigin) / imageWidth;
